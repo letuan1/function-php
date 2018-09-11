@@ -7,28 +7,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $pass = $_POST['psw'];
     $repeatPass = $_POST['psw-repeat'];
-
-    $md5 = md5($pass);
+    $md5 = null;
 
     if (empty($email)) {
         $email1 = "Email chưa được nhập ";
-    } else {
-        $arr[] = $email;
     }
 
     if (empty($pass)) {
         $pas = "Password chưa được nhập";
     } else {
-        $arr[] = $pass;
+        $md5 = md5($pass);
     }
 
     if (empty($repeatPass)) {
         $repeatPas = "RepeatPass chưa được nhập ";
     }
 
-//    $arr[] = $email;
-//    $arr[] = $md5;
-//    $puJson = file_put_contents("json.json",$arr);
     function getContents()
     {
         $json = file_get_contents('json.json');
