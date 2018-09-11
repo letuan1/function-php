@@ -41,14 +41,16 @@ require 'action_page.php'
     <table border="0">
         <caption><h2>Danh sách người đăng kí</h2></caption>
         <tr>
+            <th style="text-align: center">STT</th>
             <th style="text-align: center">Email</th>
             <th style="text-align: center">Password</th>
         </tr>
         <?php
         $arrays = getContents();
         ?>
-        <?php foreach($arrays as $array): ?>
+        <?php foreach($arrays as $index => $array): ?>
             <tr>
+                <td><?php echo $index + 1 ?></td>
                 <td><?php echo $array['email'];?></td>
                 <td><?php echo $array['pass'];?></td>
             </tr>
