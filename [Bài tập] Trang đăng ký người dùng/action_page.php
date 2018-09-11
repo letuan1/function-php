@@ -11,6 +11,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($email)) {
         $email1 = "Email chưa được nhập ";
+    } else {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $email1 = "Định dạng email sai (xxx@xxx.xxx.xxx)!";
+        }
     }
 
     if (empty($pass)) {
@@ -46,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $jsonPush = file_put_contents($filename, $jsonData);
     }
+
     saveDataJSON("json.json", $email, $md5);
 
 }

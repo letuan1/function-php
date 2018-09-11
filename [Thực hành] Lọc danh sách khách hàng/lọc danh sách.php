@@ -68,19 +68,21 @@ $filtered_customers = searchByDate($customerList, $from_date, $to_date);
         <th>Địa chỉ</th>
         <th>Ảnh</th>
     </tr>
-    <?php if(count($filtered_customers) === 0):?>
+    <?php if (count($filtered_customers) === 0): ?>
         <tr>
             <td>Không tìm thấy khách hàng nào</td>
         </tr>
     <?php endif; ?>
 
-    <?php foreach($filtered_customers as $index=> $customers): ?>
+    <?php foreach ($filtered_customers as $index => $customers): ?>
         <tr>
-            <td><?php echo $index + 1;?></td>
-            <td><?php echo $customers['name'];?></td>
-            <td><?php echo $customers['day_of_birth'];?></td>
-            <td><?php echo $customers['address'];?></td>
-            <td><div class="profile"><img src="<?php echo $customers['profile'];?>"/></div> </td>
+            <td><?php echo $index + 1; ?></td>
+            <td><?php echo $customers['name']; ?></td>
+            <td><?php echo $customers['day_of_birth']; ?></td>
+            <td><?php echo $customers['address']; ?></td>
+            <td>
+                <div class="profile"><img src="<?php echo $customers['profile']; ?>"/></div>
+            </td>
         </tr>
     <?php endforeach; ?>
 </table>
