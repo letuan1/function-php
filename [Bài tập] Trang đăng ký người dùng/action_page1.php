@@ -1,7 +1,19 @@
 <?php
 require 'action_page.php'
 ?>
-<form method="post" action="action_page.php">
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+</style>
+<form method="post" action="action_page1.php">
     <?php require_once 'action_page.php'?>
     <link rel='stylesheet' href="css.css">
     <div class="container">
@@ -26,4 +38,20 @@ require 'action_page.php'
     <div class="container signin">
         <p>Already have an account? <a href="#">Sign in</a>.</p>
     </div>
+    <table border="0">
+        <caption><h2>Danh sách người đăng kí</h2></caption>
+        <tr>
+            <th style="text-align: center">Email</th>
+            <th style="text-align: center">Password</th>
+        </tr>
+        <?php
+        $arrays = getContents();
+        ?>
+        <?php foreach($arrays as $array): ?>
+            <tr>
+                <td><?php echo $array['email'];?></td>
+                <td><?php echo $array['pass'];?></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
 </form>

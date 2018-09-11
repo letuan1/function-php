@@ -2,7 +2,7 @@
 
 /* Add padding to containers */
 .container {
-    padding: 16px;
+    padding: 3px;
 }
 
 /* Full-width input fields */
@@ -23,7 +23,7 @@ input[type=text]:focus, input[type=password]:focus {
 /* Overwrite default styles of hr */
 hr {
     border: 1px solid #f1f1f1;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 /* Set a style for the submit/register button */
